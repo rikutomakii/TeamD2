@@ -11,6 +11,6 @@ public class TitleController : MonoBehaviour
     }
     void SceneToSelect()
     {
-        SceneManager.LoadScene("CharacterSelect");
+        SceneManager.LoadScene("MainScene", LoadSceneMode.Single);
     }
 }
