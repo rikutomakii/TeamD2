@@ -7,7 +7,10 @@ public class TitleController : MonoBehaviour
 {
     public void OnClickStartButton()
     {
-        FadeScript.instance.FadeOut();
+        FadeScript.instance.FadeOutToIn(SceneToSelect);
+    }
+    void SceneToSelect()
+    {
         SceneManager.LoadScene("CharacterSelect");
     }
 }
