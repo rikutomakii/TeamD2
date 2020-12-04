@@ -5,12 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class TitleController : MonoBehaviour
 {
+    AudioSource audioSource;
+    public AudioClip ClickSE;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     public void OnClickStartButton()
     {
         FadeScript.instance.FadeOutToIn(SceneToSelect);
+        audioSource.PlayOneShot(ClickSE);
     }
     void SceneToSelect()
     {
-        SceneManager.LoadScene("CharacterSelect");
+        SceneManager.LoadScene("MainScene", LoadSceneMode.Single);
     }
 }
