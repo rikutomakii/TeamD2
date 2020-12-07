@@ -5,13 +5,13 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public GameObject bulletPrefab;
-    AudioSource audioSource;
-    public AudioClip shotSE;
+    //AudioSource audioSource;
+    //public AudioClip shotSE;
    
-    private void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
+    //private void Start()
+    //{
+    //    audioSource = GetComponent<AudioSource>();
+    //}
 
     // Update is called once per frame
     void Update()
@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-            audioSource.PlayOneShot(shotSE);
+            //audioSource.PlayOneShot(shotSE);
         }
     }
 }
