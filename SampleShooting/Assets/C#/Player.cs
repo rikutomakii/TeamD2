@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
             bullet.transform.position = nextPosition;
             time = 0f;
         }
+
         //if (Input.GetKeyDown(KeyCode.Space))
         //{
         //    Instantiate(bulletPrefab, transform.position, Quaternion.identity);
