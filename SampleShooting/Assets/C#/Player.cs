@@ -5,30 +5,46 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public GameObject bulletPrefab;
-    AudioSource audioSource;
-    public AudioClip shotSE;
-   
-    private void Start()
+
+    private float interval;
+    private float time = 0f;
+    //AudioSource audioSource;
+    //public AudioClip shotSE;
+
+    void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        interval = 0.1f;
     }
 
     // Update is called once per frame
+
+    //移動処理
     void Update()
     {
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
         Vector3 nextPosition = transform.position + new Vector3(x, y, 0) * Time.deltaTime * 8f;
         nextPosition = new Vector3(
-            Mathf.Clamp(nextPosition.x, -15.0f, 15.0f),
-            Mathf.Clamp(nextPosition.y, -1f, 20.0f),
+            //移動範囲
+            Mathf.Clamp(nextPosition.x, -5.0f, 5.0f),
+            Mathf.Clamp(nextPosition.y, -4f, 4.0f),
             nextPosition.z
             );
         transform.position = nextPosition;
-        if (Input.GetKeyDown(KeyCode.Space))
+
+        time += Time.deltaTime;
+
+        if(time>interval)
         {
-            Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-            audioSource.PlayOneShot(shotSE);
+            GameObject bullet = Instantiate(bulletPrefab);
+            bullet.transform.position = nextPosition;
+            time = 0f;
         }
+
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        //    //audioSource.PlayOneShot(shotSE);
+        //}
     }
 }

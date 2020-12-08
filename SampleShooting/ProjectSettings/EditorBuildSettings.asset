@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/MainScenes/CharacterSelect.unity
     guid: 0840e2d5ccdec264a8834b3978e4f108
-  - enabled: 1
+  - enabled: 0
     path: Assets/SampleScenes/MakiSampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
