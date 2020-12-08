@@ -52,53 +52,56 @@ public class PlayerControl : MonoBehaviour
             VY = VY * Sqrt2;
         }
         transform.position = CUtility.ClampPosition(new Vector3(transform.position.x + VX, transform.position.y + VY, 0));
-
-        // Zキー押しっぱなしで6フレームに1度ショットを発射する
-        if (0 < InputArray["Fire1"] && InputArray["Fire1"] % 6 == 0)
-        {
-            if (0 < InputArray["Fire3"])//低速移動中なら
-            {
-                LowerSpeedShot();
-            }
-            else // 通常移動中なら
-            {
-                HiSpeedShot();
-            }
-        }
-        _Animator.SetFloat("H", x);
-    }
-    int[] CShot0Num = { 2, 4 };
-    Vector3[] HiSpeedShotOffsetPos =
-    {
-        new Vector3(-0.15f,0.8f),
-        new Vector3(0.15f,0.8f),
-        new Vector3(-0.45f,0.4f),
-        new Vector3(0.45f,0.4f),
-    };
-    // 通常ショット登録
-    void HiSpeedShot()
-    {
-        //	Power < 200 ?0 : 1
-        for (int i = 0; i < CShot0Num[1]; i++)
-        {
-            //SGP.Shot.Add(new CShot(X + CShot0Pos_X[i], Y + CShot0Pos_Y[i], 0.75f, 10));
-            Instantiate(ShotObjs[0], transform.position + HiSpeedShotOffsetPos[i], Quaternion.identity);
-        }
-    }
-    Vector3[] LowerSpeedShotOffsetPos =
-{
-        new Vector3(-0.05f,0.8f),
-        new Vector3(0.05f,0.8f),
-        new Vector3(-0.25f,0.4f),
-        new Vector3(0.25f,0.4f),
-    };
-    //低速通常ショット登録
-    void LowerSpeedShot()
-    {
-        for (int i = 0; i < CShot0Num[1]; i++)
-        {
-            //SGP.Shot.Add(new CShot(X + CShot0Pos_X[i], Y + CShot0Pos_Y[i], 0.75f, 10));
-            Instantiate(ShotObjs[0], transform.position + LowerSpeedShotOffsetPos[i], Quaternion.identity);
-        }
     }
 }
+    
+
+//        // Zキー押しっぱなしで6フレームに1度ショットを発射する
+//        if (0 < InputArray["Fire1"] && InputArray["Fire1"] % 6 == 0)
+//        {
+//            if (0 < InputArray["Fire3"])//低速移動中なら
+//            {
+//                LowerSpeedShot();
+//            }
+//            else // 通常移動中なら
+//            {
+//                HiSpeedShot();
+//            }
+//        }
+//        _Animator.SetFloat("H", x);
+//    }
+//    int[] CShot0Num = { 2, 4 };
+//    Vector3[] HiSpeedShotOffsetPos =
+//    {
+//        new Vector3(-0.15f,0.8f),
+//        new Vector3(0.15f,0.8f),
+//        new Vector3(-0.45f,0.4f),
+//        new Vector3(0.45f,0.4f),
+//    };
+//    // 通常ショット登録
+//    void HiSpeedShot()
+//    {
+//        //	Power < 200 ?0 : 1
+//        for (int i = 0; i < CShot0Num[1]; i++)
+//        {
+//            //SGP.Shot.Add(new CShot(X + CShot0Pos_X[i], Y + CShot0Pos_Y[i], 0.75f, 10));
+//            Instantiate(ShotObjs[0], transform.position + HiSpeedShotOffsetPos[i], Quaternion.identity);
+//        }
+//    }
+//    Vector3[] LowerSpeedShotOffsetPos =
+//{
+//        new Vector3(-0.05f,0.8f),
+//        new Vector3(0.05f,0.8f),
+//        new Vector3(-0.25f,0.4f),
+//        new Vector3(0.25f,0.4f),
+//    };
+//    //低速通常ショット登録
+//    void LowerSpeedShot()
+//    {
+//        for (int i = 0; i < CShot0Num[1]; i++)
+//        {
+//            //SGP.Shot.Add(new CShot(X + CShot0Pos_X[i], Y + CShot0Pos_Y[i], 0.75f, 10));
+//            Instantiate(ShotObjs[0], transform.position + LowerSpeedShotOffsetPos[i], Quaternion.identity);
+//        }
+//    }
+//}
