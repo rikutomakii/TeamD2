@@ -26,8 +26,8 @@ public class Player : MonoBehaviour
         Vector3 nextPosition = transform.position + new Vector3(x, y, 0) * Time.deltaTime * 8f;
         nextPosition = new Vector3(
             //移動範囲
-            Mathf.Clamp(nextPosition.x, -5.0f, 5.0f),
-            Mathf.Clamp(nextPosition.y, -4f, 4.0f),
+            Mathf.Clamp(nextPosition.x, -5.45f, 1.83f),
+            Mathf.Clamp(nextPosition.y, -4f, 3.8f),
             nextPosition.z
             );
         transform.position = nextPosition;
