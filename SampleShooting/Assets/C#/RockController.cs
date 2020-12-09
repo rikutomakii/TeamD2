@@ -24,4 +24,9 @@ public class RockController : MonoBehaviour
         //    Destroy(gameObject);
         //}
     }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(gameObject);
+        //Destroy(collision.gameObject);
+    }
 }
