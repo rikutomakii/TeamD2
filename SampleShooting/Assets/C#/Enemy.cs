@@ -83,4 +83,10 @@ public class Enemy : MonoBehaviour
         // 位置を反映する
         transform.localPosition = pos;
     }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(gameObject);
+       // Destroy(collision.gameObject);
+    }
 }
