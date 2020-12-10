@@ -47,4 +47,12 @@ public class Player : MonoBehaviour
         //    //audioSource.PlayOneShot(shotSE);
         //}
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Bullet")
+        {
+            Destroy(gameObject);
+            Destroy(collision.gameObject);
+        }
+    }
 }
