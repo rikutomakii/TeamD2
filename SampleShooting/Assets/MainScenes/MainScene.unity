@@ -215,7 +215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &253861006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -423,7 +423,7 @@ GameObject:
   - component: {fileID: 551515774}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1130,7 +1130,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1456820790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1140,11 +1140,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1456820789}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbe4bb4241828af4093af8eab58428c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f99fbcc58d42aa43a3871de544f40f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rockPrefab: {fileID: 2184171177170127939, guid: bbb5b4ebec6557d48b9c517972a2d1d5,
-    type: 3}
 --- !u!4 &1456820791
 Transform:
   m_ObjectHideFlags: 0
@@ -1256,7 +1254,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!58 &1910515441
 CircleCollider2D:
   m_ObjectHideFlags: 0
