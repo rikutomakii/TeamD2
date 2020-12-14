@@ -5,9 +5,13 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public GameObject bulletPrefab;
+    public GameObject LifePoint1;
+    public GameObject LifePoint2;
+    public GameObject LifePoint3;
 
     private float interval;
     private float time = 0f;
+    float LifeCount = 3.0f;
     //AudioSource audioSource;
     //public AudioClip shotSE;
 
@@ -32,27 +36,63 @@ public class Player : MonoBehaviour
             );
         transform.position = nextPosition;
 
+        //弾自動生成
         time += Time.deltaTime;
-
-        if(time>interval)
+        if (time > interval)
         {
             GameObject bullet = Instantiate(bulletPrefab);
             bullet.transform.position = nextPosition;
             time = 0f;
         }
 
+        //ライフカウントが減るか仮実装
         //if (Input.GetKeyDown(KeyCode.Space))
         //{
-        //    Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-        //    //audioSource.PlayOneShot(shotSE);
+        //    LifeCount--;
+        //    if (LifeCount == 2.0f)
+        //    {
+        //        Destroy(LifePoint3);
+        //    }
+        //    else if (LifeCount == 1.0f)
+        //    {
+        //        Destroy(LifePoint2);
+        //    }
+        //    else if (LifeCount == 0.0f)
+        //    {
+        //        Destroy(LifePoint1);
+        //    }
+        //    //Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        //    //audioSource.PlayOneShot(shotSE)
         //}
     }
+
+    //ライフカウントの処理
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Bullet")
         {
-            Destroy(gameObject);
-            Destroy(collision.gameObject);
+            LifeCount--;
+            if(LifeCount==2.0f)
+            {
+                Destroy(LifePoint3);
+            }
+            else if(LifeCount == 1.0f)
+            {
+                Destroy(LifePoint2);
+            }
+            else if(LifeCount == 0.0f)
+            {
+                Destroy(LifePoint1);
+                Destroy(gameObject);
+                Destroy(collision.gameObject);
+            }
+            //if (LifeCount == 2.0f)
+            //{
+            //    Destroy(LifePoint3);
+            //}
+            //Destroy(LifePoint1);
+            //Destroy(gameObject);
+            //Destroy(collision.gameObject);
         }
     }
 }

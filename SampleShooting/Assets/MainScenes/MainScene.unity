@@ -721,6 +721,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 4253347845935379653, guid: c18bf80715e1b914cb7d708161b88112,
     type: 3}
+  LifePoint1: {fileID: 220260659}
+  LifePoint2: {fileID: 1395195898}
+  LifePoint3: {fileID: 1575076408}
 --- !u!95 &551515775
 Animator:
   serializedVersion: 3
