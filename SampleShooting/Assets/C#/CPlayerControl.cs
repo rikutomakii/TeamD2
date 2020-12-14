@@ -56,6 +56,7 @@ public class CPlayerControl : MonoBehaviour
         // Zキー押しっぱなしで6フレームに1度ショットを発射する
         if (0 < InputArray["Fire1"] && InputArray["Fire1"] % 6 == 0)
         {
+            CSoundPlayer.PlaySound("cshot", true);
             if (0 < InputArray["Fire3"])//低速移動中なら
             {
                 LowerSpeedShot();
@@ -105,6 +106,7 @@ public class CPlayerControl : MonoBehaviour
     {
         if (collision.tag == "Bullet")
         {
+            CSoundPlayer.PlaySound("Touhou_death", true);
             Destroy(gameObject);
             Destroy(collision.gameObject);
         }

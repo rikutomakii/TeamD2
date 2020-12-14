@@ -24,6 +24,7 @@ public class CEnemy : MonoBehaviour
         }
         if (Cnt == 300)
         {
+            CSoundPlayer.PlaySound("enemy_shot", true);
             GameObject.Find("GameManager").GetComponent<CGameManager>().BulletFactory[3].CreateBullet(transform.position, 0);
         }
         if (Cnt > 100 + 240)

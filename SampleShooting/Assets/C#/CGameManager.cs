@@ -82,5 +82,11 @@ public class CGameManager : MonoBehaviour
         {
             BulletFactory[i].Load();
         }
+
+        // Soundフォルダからすべての音声ファイルを読み込む
+        if (!CSoundPlayer.LoadAllSounds("se"))
+        {
+            print("seファイル読み込みに失敗しました");
+        }
     }
 }
