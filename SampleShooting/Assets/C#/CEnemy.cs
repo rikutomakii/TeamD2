@@ -8,11 +8,12 @@ public class CEnemy : MonoBehaviour
     int Cnt = 0;
     int Life = 60;
 
+    GameController gameController;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
     }
     //GameObject newParent = new GameObject();
     // Update is called once per frame
@@ -36,8 +37,11 @@ public class CEnemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
+      
+        Destroy(gameObject);
+        gameController.AddScore();
         if (collision.gameObject.tag == "Shot")
         {
             Life -= collision.GetComponent<CShot>().ShotPower;
@@ -45,7 +49,6 @@ public class CEnemy : MonoBehaviour
             {
                 Destroy(gameObject);
             }
-            Destroy(collision.gameObject);
         }
     }
 }
