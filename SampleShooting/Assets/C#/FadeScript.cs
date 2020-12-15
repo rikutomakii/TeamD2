@@ -30,7 +30,7 @@ public class FadeScript : MonoBehaviour
     {
         canvasGroup.DOFade(1, 2);
     }
-     
+    //暗くなって明るくなる
     public void FadeOutToIn(TweenCallback action = null)
     {
         canvasGroup.DOFade(1, 2).OnComplete(

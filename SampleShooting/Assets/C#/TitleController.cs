@@ -14,11 +14,14 @@ public class TitleController : MonoBehaviour
     }
     public void OnClickStartButton()
     {
+        //fade
         FadeScript.instance.FadeOutToIn(SceneToSelect);
+        //クリック音
         audioSource.PlayOneShot(ClickSE);
     }
     void SceneToSelect()
     {
+        //メインシーン移動
         SceneManager.LoadScene("MainScene", LoadSceneMode.Single);
     }
 }
