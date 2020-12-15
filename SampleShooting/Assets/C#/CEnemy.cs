@@ -13,7 +13,6 @@ public class CEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameController = GameObject.Find("GameController").GetComponent<GameController>();
     }
     //GameObject newParent = new GameObject();
     // Update is called once per frame
@@ -28,7 +27,7 @@ public class CEnemy : MonoBehaviour
             CSoundPlayer.PlaySound("enemy_shot", true);
             GameObject.Find("GameManager").GetComponent<CGameManager>().BulletFactory[3].CreateBullet(transform.position, 0);
         }
-        if (Cnt > 100 + 240)
+        if (Cnt > 340)
         {
             transform.position += new Vector3(0.0f, 3.0f, 0.0f) * Time.deltaTime;
         }
@@ -38,11 +37,8 @@ public class CEnemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-      
-        Destroy(gameObject);
-        gameController.AddScore();
         if (collision.gameObject.tag == "Shot")
         {
             Life -= collision.GetComponent<CShot>().ShotPower;
@@ -50,6 +46,7 @@ public class CEnemy : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+            Destroy(collision.gameObject);
         }
     }
 }
