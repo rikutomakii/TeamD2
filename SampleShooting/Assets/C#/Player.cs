@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -85,14 +86,14 @@ public class Player : MonoBehaviour
                 Destroy(LifePoint1);
                 Destroy(gameObject);
                 Destroy(collision.gameObject);
+                //fade
+                FadeScript.instance.FadeOutToIn(SceneToSelect);
             }
-            //if (LifeCount == 2.0f)
-            //{
-            //    Destroy(LifePoint3);
-            //}
-            //Destroy(LifePoint1);
-            //Destroy(gameObject);
-            //Destroy(collision.gameObject);
+            void SceneToSelect()
+            {
+                //メインシーン移動
+                SceneManager.LoadScene("Result", LoadSceneMode.Single);
+            }
         }
     }
 }
