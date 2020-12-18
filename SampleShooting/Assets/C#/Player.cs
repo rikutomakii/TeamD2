@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        interval = 1.0f;
+        interval = 0.1f;
     }
 
     // Update is called once per frame
