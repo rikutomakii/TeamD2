@@ -6,7 +6,7 @@ public class BackgroundController : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(0, -0.05f, 0);
+        transform.Translate(0, -0.01f, 0);
         if (transform.position.y < -6.2f)
         {
             transform.position = new Vector3(-1.8f, 9.4f, 0);
