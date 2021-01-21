@@ -151,10 +151,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 7240536240200413328}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: f6c8e1e5fd30a4442805ad58767d2b03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   wave: 0.1
+=======
+  m_Script: {fileID: 11500000, guid: 1452d70e05956a744ab62fbdbee3dd5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wave: 0.2
+>>>>>>> 2a3af1e2c627f92889250c39cc68a8cbda8c7eb8
 --- !u!114 &7240536239530931098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,9 +171,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 7240536240200413328}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: c2961a2a5721933419a86a536c8dee9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 7395926877357680621, guid: 20a8dde14aaa2ce47ac8f33c8021d923, type: 3}
   EneShot03: {fileID: 3250470479509970530, guid: c7034887a2b27c3498db6879740c7d11,
+=======
+  m_Script: {fileID: 11500000, guid: 7501d3c337664b74db7f17389fc0db0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  EneShot03: {fileID: 3250470479509970530, guid: 7d1536f0e01643c4fa7b8bf4e2c94261,
+>>>>>>> 2a3af1e2c627f92889250c39cc68a8cbda8c7eb8
     type: 3}

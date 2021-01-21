@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
 {
     public Text scoreText;
     int score = 0;
+    int timer = 0;
     void Start()
     {
         scoreText.text = "SCORE:" + score;
@@ -22,6 +23,12 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        
+        timer++;
+        if(timer==1f)
+        {
+            score += 1000;
+            scoreText.text = "SCORE:" + score;
+            timer = 0;
+        }
     }
 }
