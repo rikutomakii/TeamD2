@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBu04 : MonoBehaviour
+public class FPS : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        
+        Application.targetFrameRate = 65;//60FPSに設定
     }
 
     // Update is called once per frame

@@ -10,26 +10,35 @@ public class EnemyBu03 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        float shotSpeed = 8.0f;
-        if(count % 20 == 0)
+        player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
         {
-            for(int i = 0; i <24; i++)
+            float shotSpeed = 4.0f;
+            if (count % 80 == 0)
             {
-                Vector2 vec = player.transform.position - transform.position;
-                vec.Normalize();
-                //24分割
-                vec = Quaternion.Euler(0, 0, (360 / 24) * i) * vec;
-                vec *= shotSpeed;
-                var t = Instantiate(EneShot03, transform.position, EneShot03.transform.rotation);
-                t.GetComponent<Rigidbody2D>().velocity = vec;
+                for (int i = 0; i < 6; i++)
+                {
+                    Vector2 vec = player.transform.position - transform.position;
+                    vec.Normalize();
+                    // 6分割
+                    vec = Quaternion.Euler(0, 0, (360 / 6) * i) * vec;
+                    vec *= shotSpeed;
+                    var t = Instantiate(EneShot03, transform.position, EneShot03.transform.rotation);
+                    t.GetComponent<Rigidbody2D>().velocity = vec;
+                }
             }
+            count++;
         }
-        count++;
+        else
+        {
+            Debug.Log("Down");
+        }
+       
     }
 }
