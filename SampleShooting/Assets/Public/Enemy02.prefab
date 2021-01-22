@@ -151,20 +151,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 9172750305758488900}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<< HEAD
-  m_Script: {fileID: 11500000, guid: 0514e662d1d51a547a1520fe94986773, type: 3}
+  m_Script: {fileID: 11500000, guid: 14a7c132e940cf048877b0017965f5a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 7395926877357680621, guid: 20a8dde14aaa2ce47ac8f33c8021d923, type: 3}
-  Bullet: {fileID: 5263952797533102547, guid: 3681de76e664dbd4796e5a40fe5dcfc3, type: 3}
-=======
-  m_Script: {fileID: 11500000, guid: f99d0a0491e437644a77e47fda269295, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EneShot02: {fileID: 5263952797533102547, guid: 17327760528a49548bcc90e5ba2aa8ec,
+  EneShot02: {fileID: 5263952797533102547, guid: 3681de76e664dbd4796e5a40fe5dcfc3,
     type: 3}
   player: {fileID: 7395926877357680621, guid: 20a8dde14aaa2ce47ac8f33c8021d923, type: 3}
->>>>>>> 2a3af1e2c627f92889250c39cc68a8cbda8c7eb8
 --- !u!114 &3645927527473943809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,17 +166,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 9172750305758488900}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<< HEAD
-  m_Script: {fileID: 11500000, guid: 14a7c132e940cf048877b0017965f5a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EneShot02: {fileID: 5263952797533102547, guid: 3681de76e664dbd4796e5a40fe5dcfc3,
-    type: 3}
-  player: {fileID: 7395926877357680621, guid: 20a8dde14aaa2ce47ac8f33c8021d923, type: 3}
-=======
-  m_Script: {fileID: 11500000, guid: e3307d1163db10f45b181edad7ba2936, type: 3}
+  m_Script: {fileID: 11500000, guid: 0514e662d1d51a547a1520fe94986773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 7395926877357680621, guid: 20a8dde14aaa2ce47ac8f33c8021d923, type: 3}
-  Bullet: {fileID: 5263952797533102547, guid: 17327760528a49548bcc90e5ba2aa8ec, type: 3}
->>>>>>> 2a3af1e2c627f92889250c39cc68a8cbda8c7eb8
+  Bullet: {fileID: 5263952797533102547, guid: 3681de76e664dbd4796e5a40fe5dcfc3, type: 3}

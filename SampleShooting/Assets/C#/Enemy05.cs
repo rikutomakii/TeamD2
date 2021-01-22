@@ -1,14 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
-public class Enemy02 : MonoBehaviour
+public class Enemy05 : MonoBehaviour
 {
     public GameObject player;
     public GameObject Bullet;
     int Count = 0;
-    int Life = 10;
+    int Life = 60;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,9 +19,9 @@ public class Enemy02 : MonoBehaviour
     {
         Count++;
 
-        if (Count < 30)
+        if (Count > 0)
         {
-            transform.position += new Vector3(0.0f, -3.0f, 0.0f) * Time.deltaTime;
+            transform.position += new Vector3(0.0f, -2.0f, 0.0f) * Time.deltaTime;
         }
         if (Count > 300)
         {
