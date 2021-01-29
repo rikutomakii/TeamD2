@@ -81,7 +81,11 @@ public class Pauser : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-                Pauser.Pause();
+            Pauser.Pause();
+        }
+        else
+        {
+            Pauser.Resume();
         }
     }
 }
