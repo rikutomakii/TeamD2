@@ -1,60 +1,128 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿//using UnityEngine;
+//using System.Collections;
 
-public class PlayerControl : MonoBehaviour
-{
-    Animator _Animator;
-    // Start is called before the first frame update
-    public GameObject[] ShotObjs;
-    void Start()
-    {
-        _Animator = GetComponent<Animator>();
-        Sqrt2 = 1.0f / Mathf.Sqrt(2.0f);
-        InputArray["Fire1"] = 0;
-        InputArray["Fire2"] = 0;
-        InputArray["Fire3"] = 0;
-    }
-    float VX = 0;
-    float VY = 0;
-    float Sqrt2;
-    Dictionary<string, int> InputArray = new Dictionary<string, int>();
-    void CalcInput()
-    {
-        string[] str = { "Fire1", "Fire2", "Fire3" };
-        for (int i = 0; i < str.Length; ++i)
-        {
-            if (Input.GetButton(str[i]))
-            {
-                ++InputArray[str[i]];
-            }
-            else
-            {
-                InputArray[str[i]] = 0;
-            }
-        }
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        CalcInput();
-        VX = VY = 0 < InputArray["Fire3"] ? 2.5f * Time.deltaTime : 7.0f * Time.deltaTime;
+//public class PlayerControl : MonoBehaviour
+//{
+//    // プレイヤーステートスクリプトの取得
+//    private State_Player _State;
+//    // 自身のスプライト
+//    private SpriteRenderer _Sprite;
+//    // 点滅用透過度
+//    private float _flashAlpha;
 
-        float x = Input.GetAxisRaw("Horizontal");
-        float y = Input.GetAxisRaw("Vertical");
+//    // Start is called before the first frame update
+//    void Start()
+//    {
+//        _State = GameObject.FindGameObjectsWithTag("State_Manager")[0].GetComponent<State_Player>();
+//        _Sprite = transform.GetComponent<SpriteRenderer>();
+//        _flashAlpha = 1;
+//    }
 
-        if (x < 0) VX = -VX; else if (x == 0) VX = 0;
-        if (y < 0) VY = -VY; else if (y == 0) VY = 0;
-        // 斜め方向の速度調節
-        if (VX != 0 && VY != 0)
-        {
-            VX = VX * Sqrt2;
-            VY = VY * Sqrt2;
-        }
-        transform.position = CUtility.ClampPosition(new Vector3(transform.position.x + VX, transform.position.y + VY, 0));
-    }
-}
-    
+//    // Update is called once per frame
+//    void Update()
+//    {
+//        _DamageFlash();
+//    }
+
+//    // ダメージ時のフラッシュ処理
+//    private void _DamageFlash()
+//    {
+//        // ダメージを受けている状態か
+//        if (_State.PlayerHealthList[0])
+//        {
+//            // 透明度を時間によってサイン派で決める
+//            _flashAlpha = Mathf.Sin(Time.time * 100) / 2 + 0.5f;
+
+//            // 透明度を適用する
+//            Color _color = _Sprite.color;
+//            _color.a = _flashAlpha;
+//            _Sprite.color = _color;
+//        }
+//    }
+
+//    private void OnTriggerEnter2D(Collider2D other)
+//    {
+//        switch (other.tag)
+//        {
+//            case "DamageTrap":
+//                _State.setPlayerStatus(_State.getPlayerStatus(0) - 1, 0);
+//                _State.setPlayerHelthList(0, true);
+//                StartCoroutine("FlashStopWait1sCount");
+//                break;
+//        }
+//    }
+
+//    // 呼び出されたら1秒待って点滅フラグを解除する
+//    IEnumerator FlashStopWait1sCount()
+//    {
+//        // 1秒間処理を止める
+//        yield return new WaitForSeconds(1);
+
+//        // プレイヤーの透明度を戻す
+//        _Sprite.color = new Color(255, 255, 255, 255);
+//        // 点滅状態を解除
+//        _State.setPlayerHelthList(0, false);
+//    }
+
+//}
+
+//using System.Collections;
+//using System.Collections.Generic;
+//using UnityEngine;
+
+//public class PlayerControl : MonoBehaviour
+//{
+//    Animator _Animator;
+//    // Start is called before the first frame update
+//    public GameObject[] ShotObjs;
+//    void Start()
+//    {
+//        _Animator = GetComponent<Animator>();
+//        Sqrt2 = 1.0f / Mathf.Sqrt(2.0f);
+//        InputArray["Fire1"] = 0;
+//        InputArray["Fire2"] = 0;
+//        InputArray["Fire3"] = 0;
+//    }
+//    float VX = 0;
+//    float VY = 0;
+//    float Sqrt2;
+//    Dictionary<string, int> InputArray = new Dictionary<string, int>();
+//    void CalcInput()
+//    {
+//        string[] str = { "Fire1", "Fire2", "Fire3" };
+//        for (int i = 0; i < str.Length; ++i)
+//        {
+//            if (Input.GetButton(str[i]))
+//            {
+//                ++InputArray[str[i]];
+//            }
+//            else
+//            {
+//                InputArray[str[i]] = 0;
+//            }
+//        }
+//    }
+//    // Update is called once per frame
+//    void Update()
+//    {
+//        CalcInput();
+//        VX = VY = 0 < InputArray["Fire3"] ? 2.5f * Time.deltaTime : 7.0f * Time.deltaTime;
+
+//        float x = Input.GetAxisRaw("Horizontal");
+//        float y = Input.GetAxisRaw("Vertical");
+
+//        if (x < 0) VX = -VX; else if (x == 0) VX = 0;
+//        if (y < 0) VY = -VY; else if (y == 0) VY = 0;
+//        // 斜め方向の速度調節
+//        if (VX != 0 && VY != 0)
+//        {
+//            VX = VX * Sqrt2;
+//            VY = VY * Sqrt2;
+//        }
+//        transform.position = CUtility.ClampPosition(new Vector3(transform.position.x + VX, transform.position.y + VY, 0));
+//    }
+//}
+
 
 //        // Zキー押しっぱなしで6フレームに1度ショットを発射する
 //        if (0 < InputArray["Fire1"] && InputArray["Fire1"] % 6 == 0)

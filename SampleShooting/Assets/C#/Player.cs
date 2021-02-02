@@ -10,6 +10,11 @@ public class Player : MonoBehaviour
     public GameObject LifePoint2;
     public GameObject LifePoint3;
 
+    //
+    public bool on_damage = false;       //ダメージフラグ
+    public bool isMuteki= false;     //無敵時間 
+    private SpriteRenderer renderer;
+
     private float interval;
     private float time = 0f;
     float LifeCount = 3.0f;
@@ -19,6 +24,10 @@ public class Player : MonoBehaviour
     void Start()
     {
         interval = 0.1f;
+        //
+        //点滅処理の為に呼び出しておく
+        renderer = gameObject.GetComponent<SpriteRenderer>();
+
     }
 
     // Update is called once per frame
@@ -46,6 +55,14 @@ public class Player : MonoBehaviour
             time = 0f;
         }
 
+        //
+        // ダメージフラグがtrueで有れば点滅させる
+        if (on_damage)
+        {
+            float level = Mathf.Abs(Mathf.Sin(Time.time * 10));
+            renderer.color = new Color(1f, 1f, 1f, level);
+        }
+
         //ライフカウントが減るか仮実装
         //if (Input.GetKeyDown(KeyCode.Space))
         //{
@@ -67,19 +84,45 @@ public class Player : MonoBehaviour
         //}
     }
 
+    //
+    IEnumerator WaitForIt()
+    {
+        // 1秒間処理を止める
+        yield return new WaitForSeconds(2.0f);
+
+        // １秒後ダメージフラグをfalseにして点滅を戻す
+        on_damage = false;
+        isMuteki = false;
+        renderer.color = new Color(1f, 1f, 1f, 1f);
+    }
+
+    //
+    void OnDamageEffect()
+    {
+        // ダメージフラグON
+        on_damage = true;
+        isMuteki = true;
+        // コルーチン開始
+        StartCoroutine("WaitForIt");
+    }
+
+
     //ライフカウントの処理
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Bullet")
+        if (collision.tag == "Bullet"&& isMuteki == false)
         {
             LifeCount--;
             if(LifeCount==2.0f)
             {
                 Destroy(LifePoint3);
+                OnDamageEffect();
+
             }
             else if(LifeCount == 1.0f)
             {
                 Destroy(LifePoint2);
+                OnDamageEffect();
             }
             else if(LifeCount == 0.0f)
             {
@@ -89,6 +132,7 @@ public class Player : MonoBehaviour
                 //fade
                 FadeScript.instance.FadeOutToIn(SceneToSelect);
             }
+
             void SceneToSelect()
             {
                 //メインシーン移動
