@@ -467,7 +467,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.85937494
+  m_Radius: 0.19
 --- !u!114 &551515774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -485,6 +485,7 @@ MonoBehaviour:
   LifePoint1: {fileID: 220260659}
   LifePoint2: {fileID: 1395195898}
   LifePoint3: {fileID: 1575076408}
+  on_damage: 0
 --- !u!95 &551515775
 Animator:
   serializedVersion: 3
@@ -1702,7 +1703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1765717427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1944,7 +1945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
