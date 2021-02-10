@@ -15,7 +15,7 @@ public class Pauser : MonoBehaviour
     {
         // ポーズ対象に追加する
         targets.Add(this);
-        Resume();
+        //Pauser.Pause();
     }
 
     // 破棄されるとき
@@ -59,7 +59,7 @@ public class Pauser : MonoBehaviour
             com.enabled = true;
         }
         //jikanteisi = false;
-        Debug.Log("解除になったよ");
+        //Debug.Log("解除になったよ");
         pauseBehavs = null;
     }
 
@@ -85,8 +85,8 @@ public class Pauser : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Resume();
-            //Debug.Log("trueになったよ");
+            //Pauser.Resume();
+            Debug.Log("trueになったよ");
         }
         //if (Input.GetKeyDown(KeyCode.Escape) && jikanteisi == false)
         //{
