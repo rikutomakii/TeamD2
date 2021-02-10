@@ -7,16 +7,15 @@ public class Pauser : MonoBehaviour
 {
 
     static List<Pauser> targets = new List<Pauser>();   // ポーズ対象のスクリプト
-    public bool jikanteisi=false;
+    //public bool jikanteisi=false;
     Behaviour[] pauseBehavs = null; // ポーズ対象のコンポーネント
 
-    // 初期化
     // 初期化
     void Start()
     {
         // ポーズ対象に追加する
         targets.Add(this);
-
+        Resume();
     }
 
     // 破棄されるとき
@@ -41,8 +40,8 @@ public class Pauser : MonoBehaviour
         {
             com.enabled = false;
         }
-        jikanteisi = true;
-        Debug.Log("trueになったよ");
+        //jikanteisi = true;
+        //Debug.Log("trueになったよ");
 
     }
 
@@ -59,7 +58,8 @@ public class Pauser : MonoBehaviour
         {
             com.enabled = true;
         }
-        jikanteisi = false;
+        //jikanteisi = false;
+        Debug.Log("解除になったよ");
         pauseBehavs = null;
     }
 
@@ -83,13 +83,18 @@ public class Pauser : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && jikanteisi == false)
-        {
-            Pause();
-        }
-        else
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             Resume();
+            //Debug.Log("trueになったよ");
         }
+        //if (Input.GetKeyDown(KeyCode.Escape) && jikanteisi == false)
+        //{
+        //    Pause();
+        //}
+        //else
+        //{
+        //    Resume();
+        //}
     }
 }
