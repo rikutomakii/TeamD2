@@ -426,7 +426,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: "\u30B2\u30FC\u30E0\u30B9\u30BF\u30FC\u30C8"
 --- !u!222 &712071975
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -963,6 +963,7 @@ GameObject:
   - component: {fileID: 2109785259}
   - component: {fileID: 2109785258}
   - component: {fileID: 2109785262}
+  - component: {fileID: 2109785263}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -979,7 +980,7 @@ RectTransform:
   m_GameObject: {fileID: 2109785256}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1.3396751, y: 1.307, z: 0.6535}
   m_Children:
   - {fileID: 712071973}
   m_Father: {fileID: 2026169759}
@@ -987,7 +988,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 500, y: 0}
+  m_AnchoredPosition: {x: 229, y: -19.6}
   m_SizeDelta: {x: 135.89252, y: 44.408188}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2109785258
@@ -1046,7 +1047,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2109785258}
+      - m_Target: {fileID: 2109785263}
         m_MethodName: OnClickStartButton
         m_Mode: 1
         m_Arguments:
@@ -1190,3 +1191,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2109785263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109785256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 499e0af82efb7a34cb57d49405029d57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
