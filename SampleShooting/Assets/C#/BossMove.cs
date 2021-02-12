@@ -5,26 +5,17 @@ using UnityEngine.UI;
 
 public class BossMove : MonoBehaviour
 {
-    Slider _slider;
+    private Vector3 targetpos;
+   
     void Start()
     {
-        // スライダーを取得する
-        _slider = GameObject.Find("Slider").GetComponent<Slider>();
+        targetpos = transform.position;
     }
 
-    float _hp = 0;
+    
     void Update()
     {
-        // HP上昇
-        _hp -= 1f;
-        if (_hp < 0)
-        {
-            // 最大を超えたら0に戻す
-            _hp = 100;
-        }
-
-        // HPゲージに値を設定
-        _slider.value = _hp;
+        transform.position = new Vector3(Mathf.Sin(Time.time) * 4.0f + targetpos.x, targetpos.y, targetpos.z);
     }
 }
 
