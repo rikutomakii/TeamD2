@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Enemy03 : MonoBehaviour
 {
-    int Life = 60;
+    int Life = 5;
     int Count = 0;
     public float wave = 0.1f;
     // Start is called before the first frame update

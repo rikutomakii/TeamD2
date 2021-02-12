@@ -7,7 +7,7 @@ public class Enemy05 : MonoBehaviour
     public GameObject player;
     public GameObject Bullet;
     int Count = 0;
-    int Life = 60;
+    int Life = 5;
     // Start is called before the first frame update
     void Start()
     {

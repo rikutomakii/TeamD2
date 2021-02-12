@@ -16,7 +16,7 @@ public class BossBu03 : MonoBehaviour
     {
         float shotSpeed = 4.0f;
         count++;
-        if (count % 4 == 0)
+        if (count % 6 == 0)
         {
             for (int i = 0; i < 4; i++)
             {
