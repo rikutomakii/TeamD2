@@ -57,7 +57,7 @@ public class GameController : MonoBehaviour
         scoreText.text = "SCORE:" + score;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         timer++;
         if (timer == 1f)

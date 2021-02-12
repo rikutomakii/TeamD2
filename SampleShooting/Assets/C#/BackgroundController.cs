@@ -4,7 +4,7 @@ using System.Collections;
 public class BackgroundController : MonoBehaviour
 {
 
-    void Update()
+    void FixedUpdate()
     {
         transform.Translate(0, -0.01f, 0);
         if (transform.position.y < -6.2f)
