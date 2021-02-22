@@ -62,7 +62,7 @@ public class GameController : MonoBehaviour
         timer++;
         if (timer == 1f)
         {
-            score += 100;
+            score += 1000000;
             scoreText.text = "SCORE:" + score;
             timer = 0;
         }
