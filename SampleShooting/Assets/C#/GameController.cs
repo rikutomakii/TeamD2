@@ -44,11 +44,13 @@ public class GameController : MonoBehaviour
     //    scoreText.text = endScore.ToString();
     //}
     public Text sscoreText;
-    int score = 0;
+    public static int score = 0;
     int timer = 0;
+
     void Start()
     {
         sscoreText.text = "SCORE:" + score;
+        score = 0;
     }
 
     public void AddScore()
@@ -62,9 +64,15 @@ public class GameController : MonoBehaviour
         timer++;
         if (timer == 1f)
         {
-            score += 1;
+            score += 100;
             sscoreText.text = "SCORE:" + score;
             timer = 0;
         }
     }
+
+    public static int getscore()
+    {
+        return score;
+    }
+
 }

@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        interval = 0.05f;
+        interval = 0.075f;
         //
         //点滅処理の為に呼び出しておく
         renderer = gameObject.GetComponent<SpriteRenderer>();
