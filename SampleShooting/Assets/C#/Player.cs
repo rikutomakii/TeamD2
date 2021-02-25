@@ -17,13 +17,14 @@ public class Player : MonoBehaviour
 
     private float interval;
     private float time = 0f;
+    private int timeCount;
     float LifeCount = 3.0f;
     //AudioSource audioSource;
     //public AudioClip shotSE;
 
     void Start()
     {
-        interval = 0.1f;
+        interval = 0.075f;
         //
         //点滅処理の為に呼び出しておく
         renderer = gameObject.GetComponent<SpriteRenderer>();
@@ -33,6 +34,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
 
     //移動処理
+
     void Update()
     {
         float x = Input.GetAxis("Horizontal");
@@ -46,14 +48,24 @@ public class Player : MonoBehaviour
             );
         transform.position = nextPosition;
 
-        //弾自動生成
+        //弾生成
         time += Time.deltaTime;
-        if (time > interval)
+        if (Input.GetKey("space"))
         {
-            GameObject bullet = Instantiate(bulletPrefab);
-            bullet.transform.position = nextPosition;
-            time = 0f;
+            if (time > interval)
+            {
+                GameObject bullet = Instantiate(bulletPrefab);
+                bullet.transform.position = nextPosition;
+                time = 0f;
+            }
         }
+        //time += Time.deltaTime;
+        //if (time > interval)
+        //{
+        //    GameObject bullet = Instantiate(bulletPrefab);
+        //    bullet.transform.position = nextPosition;
+        //    time = 0f;
+        //}
 
         //
         // ダメージフラグがtrueで有れば点滅させる

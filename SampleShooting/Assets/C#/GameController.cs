@@ -43,18 +43,20 @@ public class GameController : MonoBehaviour
     //    // 最終的な着地のスコア
     //    scoreText.text = endScore.ToString();
     //}
-    public Text scoreText;
-    int score = 0;
+    public Text sscoreText;
+    public static int score = 0;
     int timer = 0;
+
     void Start()
     {
-        scoreText.text = "SCORE:" + score;
+        sscoreText.text = "SCORE:" + score;
+        score = 0;
     }
 
     public void AddScore()
     {
         score += 100;
-        scoreText.text = "SCORE:" + score;
+        sscoreText.text = "SCORE:" + score;
     }
 
     void FixedUpdate()
@@ -63,8 +65,14 @@ public class GameController : MonoBehaviour
         if (timer == 1f)
         {
             score += 100;
-            scoreText.text = "SCORE:" + score;
+            sscoreText.text = "SCORE:" + score;
             timer = 0;
         }
     }
+
+    public static int getscore()
+    {
+        return score;
+    }
+
 }

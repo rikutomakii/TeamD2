@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ClearButton : MonoBehaviour
+public class ClearTitleButton : MonoBehaviour
 {
     public void OnClickStartButton()
     {
