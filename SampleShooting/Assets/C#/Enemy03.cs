@@ -8,6 +8,7 @@ public class Enemy03 : MonoBehaviour
     int Life = 5;
     int Count = 0;
     public float wave = 0.1f;
+    public GameObject itemPrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +40,8 @@ public class Enemy03 : MonoBehaviour
             if (Life <= 0)
             {
                 Destroy(gameObject);
+                // 敵を破壊した瞬間＝敵のHPが0になった瞬間にアイテムプレハブを実体化させる。
+                Instantiate(itemPrefab, transform.position, Quaternion.identity);
             }
             Destroy(collision.gameObject);
         }
